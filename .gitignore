@@ -1,0 +1,15 @@
+# Ansible
+*.retry
+
+# Python (caso use scripts)
+__pycache__/
+*.pyc
+
+# SSH keys
+*.pem
+
+# Env files
+.env
+
+# OS
+.DS_Store
