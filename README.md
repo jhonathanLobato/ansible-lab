@@ -2,7 +2,7 @@
 
 ## 📌 Visão Geral
 
-Este repositório contém um ambiente prático de estudos e experimentação com **Ansible**, focado em automação de infraestrutura moderna.
+Este repositório contém um ambiente prático de estudos e experimentação com Ansible, focado em automação de infraestrutura moderna.
 
 O projeto simula cenários reais de provisionamento e configuração de servidores, utilizando tanto:
 
@@ -64,7 +64,7 @@ O ambiente segue o modelo clássico de automação com Ansible:
 * AWS EC2
 * SSH
 * Linux (Ubuntu)
-* Docker *(ambiente local opcional)*
+* Docker (ambiente local opcional)
 * Vagrant *(opcional para simulação com VMs)*
 
 ---
