@@ -132,7 +132,6 @@ Objetivo: automação de backend
 
 * Utilizar Ansible Vault
 * Proteger:
-
   * senhas
   * credenciais
 
@@ -151,7 +150,6 @@ Objetivo: automação contínua
 
 * Provisionar infraestrutura com Terraform
 * Configurar com Ansible:
-
   * web
   * aplicação
   * banco de dados

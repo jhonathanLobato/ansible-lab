@@ -1,0 +1,15 @@
+all:
+    children:
+        webservers:
+            hosts:
+                web1.example.com:
+                    http_port: 8080
+                    https_port: 8443
+        dbservers:
+            hosts:
+                db1.example.com:
+                    squid_port: 3128
+            vars:
+                ansible_user: admin
+                ansible_port: 22
+                

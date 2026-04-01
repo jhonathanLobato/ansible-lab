@@ -1,0 +1,27 @@
+# Desafio 2 — Comandos ad-hoc
+
+comando ad-hoc para instalar o nginx
+# ansible -i inventory/hosts.ini webservers -m apt -a "name=nginx state=latest" -b
+
+# ansible -i <local inventario> <grupo ou host> -m <modulo apt para instalar> -a <pacote e estado> -b(para executar em superuser)
+
+Os principais:
+    - apt → Debian/Ubuntu
+    - yum / dnf → RedHat/CentOS
+    - zypper → SUSE
+    - package → genérico (melhor prática)
+
+Para remover o pacote
+# ansible all -m apt -a "name=nginx state=absent purge=yes" --become
+
+
+Estado	Significado
+present	instalado
+absent	removido
+latest	versão mais recente
+
+
+Instalando múltiplos pacotes
+# ansible all -m package -a "name=nginx,git,curl state=present" --become
+
+
