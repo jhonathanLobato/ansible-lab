@@ -2,7 +2,7 @@
 *.retry
 ansible.log
 
-# Python (caso use scripts)
+# Python
 __pycache__/
 *.pyc
 
