@@ -1,0 +1,23 @@
+- name: Update Ubuntu Linux Servers
+  hosts: ubuntu01
+  tasks:
+    - name: APT | Update System   # Nome do modulo e a descrição da tarefa
+      ansible.builtin.apt:
+        name: "*"
+        state: latest
+        update_cache: yes
+
+#- name: Update Debian Linux Servers
+#  hosts: debian01
+#  tasks:
+#    - name: Debian Like | Update System
+#      ansible.builtin.apt: name="*" state=latest update_cache=yes
+
+# Rodando o playbook
+# ansible-playbook [argumentos] [playbook.yml]
+# -h para mostrar os argumentos
+# -i para informar o inventário
+# -u para informar o usuário
+# --syntax-check para verificar a sintaxe do playbook
+# --list-hosts para listar os hosts que serão afetados
+# --list-tasks para listar as tarefas que serão executadas
