@@ -1,0 +1,14 @@
+---
+
+- name: Testando Variaveis
+  hosts: ubuntu01
+  vars_files:
+    - ../vars_files/packages.yml
+
+  tasks:
+    - name: APT | Instalando packages
+      ansible.builtin.apt:
+        name: "{{ packages }}"
+        state: latest
+        
+...

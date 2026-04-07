@@ -1,0 +1,10 @@
+---
+- name: Variavel em runtime
+  hosts: ubuntu01
+  tasks:
+    - name: DEBUG | Variavel em runtime
+      ansible.builtin.debug:
+        msg: "A variavel em runtime é {{ message }}"
+
+# nsible-playbook -i inventory/hosts.ini -l ubuntu01 playbooks/6_varsRunTime.yml --extra-vars message="oi"
+# --extra-vars ou -e é utilizado para passar variaveis em runtime, ou seja, no momento da execução do playbook.

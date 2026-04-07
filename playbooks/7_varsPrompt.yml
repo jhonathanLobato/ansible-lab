@@ -1,0 +1,32 @@
+---
+- name: Variavel em Prompt | Criar user no linux
+  hosts: ubuntu01
+  vars_prompt: 
+    - name: username
+      prompt: "Digite o nome do usuario"
+      private: false
+    
+    - name: password
+      prompt: "Digite a senha do usuario"
+      private: true
+      encrypt: "md5_crypt"      # pip install passlib
+      confirm: true
+      salt_size: 8
+
+    - name: shell
+      prompt: "Digite o shell do usuario"
+      private: false
+
+  tasks:
+    - name: Print a message
+      ansible.builtin.debug:
+        msg: "Usuario: {{ username }} | Password: {{ password }} | Shell: {{ shell }}"
+    
+    - name: USER | Add user
+      ansible.builtin.user:
+        name: "{{ username }}"
+        comment: "User create by Ansible"
+        shell: "{{ shell }}"
+        home: "/home/{{ username }}"
+        password: "{{ password }}"
+

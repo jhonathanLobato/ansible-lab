@@ -1,0 +1,23 @@
+---
+
+- name: Testando Variaveis
+  hosts: ubuntu01
+  vars:
+    message: "Mensagem de teste atraves de variavel"
+    packages:                                             # criando variavel do tipo lista
+      - htop
+      - vim
+
+  tasks:
+    # - name: DEBUG | {{ message }}                       # é possivel adicionar a variavel no nome da task
+    - name: DEBUG
+      ansible.builtin.debug:
+        # msg: "Mensagem de teste"
+        msg: "{{ message }}"
+
+    - name: APT | Instalando packages
+      ansible.builtin.apt:
+        name: "{{ packages}}"                             # utilizando a variavel do tipo lista
+        state: latest
+
+...
